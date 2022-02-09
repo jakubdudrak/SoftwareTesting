@@ -49,8 +49,9 @@ class RobotTest {
         buddy.waitTillWorking();
     }
 
-    @Test void timeoutExceeded() {
-        assertTimeout(ofMillis(10), () -> {
+    @Test
+    void timeoutExceeded() {
+        assertTimeout(ofMillis(150), () -> {
             buddy.waitTillWorking(); }
         );
     }
