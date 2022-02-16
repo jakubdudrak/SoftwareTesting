@@ -5,7 +5,7 @@ import static java.time.Duration.ofMillis;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RobotTest {
-    Robot buddy = new Robot("Buddy");
+    Robot buddy = new Robot("Buddy", 10);
 
     @Test
     public void getName(){
@@ -40,7 +40,7 @@ class RobotTest {
     @Test
     public void testName_Fail(){
         assertThrows(IllegalArgumentException.class, () ->{
-        Robot chuck = new Robot("");}
+        Robot chuck = new Robot("",31);}
         );
     }
 
@@ -55,4 +55,10 @@ class RobotTest {
             buddy.waitTillWorking(); }
         );
     }
+
+    @Test
+    void getAge(){
+        assertEquals(10, buddy.getAge());
+    }
+
 }
